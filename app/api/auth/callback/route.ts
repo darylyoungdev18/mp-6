@@ -48,5 +48,6 @@ export async function GET(req: NextRequest) {
     picture: userData.picture || 'no picture',
   });
 
-  return Response.redirect(`http://localhost:3001/profile?${params.toString()}`, 302);
+  const baseUrl = process.env.BASE_URL as string;
+return Response.redirect(`${baseUrl}/profile?${params.toString()}`, 302);
 }
