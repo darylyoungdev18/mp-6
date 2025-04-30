@@ -45,8 +45,8 @@ export async function GET(req: NextRequest) {
   const params = new URLSearchParams({
     name: userData.name || '',
     email: userData.email || '',
-    picture: userData.picture || '',
+    picture: userData.picture || 'no picture',
   });
 
-  return Response.redirect(`http://localhost:3000/profile?${params.toString()}`, 302);
+  return Response.redirect(`http://localhost:3001/profile?${params.toString()}`, 302);
 }
